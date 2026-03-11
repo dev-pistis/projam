@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>잼테니스 × 프로스포츠 — 사업 제안서</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d0d0d;
+    --cream: #f5f0e8;
+    --accent: #c8a96e;
+    --accent2: #2a5c45;
+    --light-green: #eaf2ec;
+    --border: #d4cdc0;
+    --muted: #7a7265;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.7;
+  }
+
+  /* COVER */
+  .cover {
+    min-height: 100vh;
+    background: var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 10%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: 'TENNIS';
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 220px;
+    color: rgba(200, 169, 110, 0.07);
+    letter-spacing: 8px;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .cover-eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 6px;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+
+  .cover-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(44px, 7vw, 90px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .cover-title span {
+    color: var(--accent);
+  }
+
+  .cover-subtitle {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(18px, 3vw, 28px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+  }
+
+  .cover-line {
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    margin-bottom: 36px;
+  }
+
+  .cover-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.45);
+    max-width: 480px;
+    line-height: 1.9;
+    font-weight: 300;
+  }
+
+  .cover-badge {
+    position: absolute;
+    bottom: 60px;
+    right: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .cover-badge .label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .cover-badge .brands {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .brand-pill {
+    padding: 8px 18px;
+    border: 1px solid rgba(200,169,110,0.4);
+    border-radius: 2px;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    font-weight: 500;
+  }
+
+  /* MAIN CONTENT */
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 5%;
+  }
+
+  /* SECTION HEADER */
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 40px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    color: var(--accent);
+    line-height: 1;
+    opacity: 0.5;
+    flex-shrink: 0;
+    margin-top: -6px;
+  }
+
+  .section-meta {
+    flex: 1;
+  }
+
+  .section-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--accent2);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .section-subtitle {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  /* CARDS */
+  .cards-grid {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 64px;
+  }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    transition: box-shadow 0.2s;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+
+  .card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--light-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.3px;
+  }
+
+  .card-badge {
+    margin-left: auto;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 3px 8px;
+    background: var(--accent);
+    color: var(--white);
+    border-radius: 1px;
+  }
+
+  .card-body {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* LIFECYCLE SECTION */
+  .lifecycle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .lifecycle-item {
+    background: var(--light-green);
+    border: 1px solid #c3ddc9;
+    padding: 22px 24px;
+    border-radius: 2px;
+  }
+
+  .lifecycle-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--accent2);
+    margin-bottom: 8px;
+  }
+
+  .lifecycle-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .lifecycle-desc {
+    font-size: 13px;
+    color: #4a6b52;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* DIVIDER */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 64px 0;
+  }
+
+  /* STRATEGY SECTION */
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .strategy-card {
+    background: var(--ink);
+    color: var(--white);
+    padding: 28px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .strategy-card::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgba(200,169,110,0.15);
+    border-radius: 50%;
+  }
+
+  .strategy-card .arrow {
+    font-size: 22px;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .strategy-card .from {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    font-weight: 300;
+    margin-bottom: 4px;
+  }
+
+  .strategy-card .to {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+    line-height: 1.6;
+  }
+
+  /* COMMUNITY */
+  .community-block {
+    background: var(--accent2);
+    color: var(--white);
+    padding: 40px 48px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 64px;
+  }
+
+  .community-icon-wrap {
+    font-size: 48px;
+    flex-shrink: 0;
+  }
+
+  .community-tag {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .community-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .community-desc {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* MASTER CLASS */
+  .masterclass-block {
+    border: 1px solid var(--border);
+    padding: 36px 40px;
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    background: var(--white);
+  }
+
+  .mc-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    color: var(--accent);
+    line-height: 1;
+    opacity: 0.3;
+    flex-shrink: 0;
+  }
+
+  .mc-content .tag {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .mc-content h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .mc-content p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    padding: 48px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-brands {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-brand {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 1px;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .cover > * {
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  .cover > *:nth-child(1) { animation-delay: 0.1s; opacity: 0; }
+  .cover > *:nth-child(2) { animation-delay: 0.2s; opacity: 0; }
+  .cover > *:nth-child(3) { animation-delay: 0.3s; opacity: 0; }
+  .cover > *:nth-child(4) { animation-delay: 0.4s; opacity: 0; }
+  .cover > *:nth-child(5) { animation-delay: 0.5s; opacity: 0; }
+
+  @media (max-width: 640px) {
+    .lifecycle { grid-template-columns: 1fr; }
+    .strategy-grid { grid-template-columns: 1fr; }
+    .community-block { flex-direction: column; gap: 20px; padding: 32px 28px; }
+    .masterclass-block { flex-direction: column; gap: 8px; padding: 28px 24px; }
+    .mc-number { font-size: 48px; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-eyebrow">BUSINESS PROPOSAL · 2025</div>
+  <h1 class="cover-title">잼테니스 <span>×</span><br>프로스포츠</h1>
+  <p class="cover-subtitle">목동 테니스 생태계 통합 전략 제안서</p>
+  <div class="cover-line"></div>
+  <p class="cover-desc">레슨·연습부터 용품·장비까지, 두 브랜드의 강점을 연결해<br>지역 테니스 커뮤니티의 핵심 허브로 성장하기 위한 실행 전략입니다.</p>
+  <div class="cover-badge">
+    <span class="label">Presented by</span>
+    <div class="brands">
+      <span class="brand-pill">JAM TENNIS</span>
+      <span class="brand-pill">PRO SPORTS</span>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main class="content">
+
+  <!-- SECTION 1: 잼테니스 -->
+  <div class="section-header">
+    <div class="section-number">01</div>
+    <div class="section-meta">
+      <div class="section-tag">Indoor Lesson & Practice</div>
+      <div class="section-title">잼테니스</div>
+      <div class="section-subtitle">실내 레슨 및 연습장 — 차별화 운영 전략</div>
+    </div>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon">📱</div>
+        <div class="card-title">디지털 케어 서비스</div>
+        <span class="card-badge">MZ 공략</span>
+      </div>
+      <div class="card-body">
+        강사가 직접 레슨 영상을 분석해 맞춤 피드백을 전송하는 디지털 케어 시스템을 도입합니다.
+        영상 기반의 소통 방식은 MZ세대의 학습 습관과 맞닿아 있으며, 레슨의 질과 재등록률을 동시에 높입니다.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon">✨</div>
+        <div class="card-title">프리미엄 코트 관리</div>
+      </div>
+      <div class="card-body">
+        '방치 없는' 쾌적한 코트 상태와 철저한 청결 유지를 핵심 운영 원칙으로 삼습니다.
+        시설 관리 수준 자체가 브랜드 이미지를 결정한다는 관점 하에, 고객이 체감하는 프리미엄을 공간에서 직접 전달합니다.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon">🎾</div>
+        <div class="card-title">실전 연계 매치</div>
+      </div>
+      <div class="card-body">
+        레슨생을 대상으로 야외 코트 정기 매치를 주최합니다.
+        실내 레슨과 실전 경기를 연결함으로써 수강생의 만족도와 지속 참여 동기를 강화하고, 커뮤니티 중심의 센터로 자리매김합니다.
+      </div>
+    </div>
+  </div>
+
+  <!-- LIFECYCLE -->
+  <div class="card" style="margin-bottom: 64px; border-left-color: var(--accent2);">
+    <div class="card-head">
+      <div class="card-icon" style="background: #e8f0e9;">🌱</div>
+      <div class="card-title">생애주기별 맞춤 레슨 프로그램</div>
+    </div>
+    <div class="card-body" style="margin-bottom: 16px;">
+      연령과 경험 수준에 맞춘 세분화된 커리큘럼으로 생애 전 주기에 걸친 고객을 확보합니다.
+    </div>
+    <div class="lifecycle">
+      <div class="lifecycle-item">
+        <div class="lifecycle-label">JUNIOR</div>
+        <div class="lifecycle-title">주니어 프로그램</div>
+        <div class="lifecycle-desc">
+          체험 레슨 참여 후 6개월 등록 시, <strong>'생애 첫 라켓'</strong>을 선물합니다.
+          프로스포츠와 연계한 특별 혜택으로 초보 어린이 고객과 학부모의 유입을 유도합니다.
+        </div>
+      </div>
+      <div class="lifecycle-item">
+        <div class="lifecycle-label">SENIOR</div>
+        <div class="lifecycle-title">시니어 프로그램</div>
+        <div class="lifecycle-desc">
+          관절 보호를 중심에 둔 맞춤형 커리큘럼을 구성하고, 부담 없는 체험 레슨으로 첫 진입 장벽을 낮춥니다.
+          안전하고 즐거운 운동 경험을 설계합니다.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- SECTION 2: 프로스포츠 -->
+  <div class="section-header">
+    <div class="section-number">02</div>
+    <div class="section-meta">
+      <div class="section-tag">Equipment & String Shop</div>
+      <div class="section-title">프로스포츠</div>
+      <div class="section-subtitle">용품 및 스트링샵 — 전문성 기반 오프라인 경쟁력 강화</div>
+    </div>
+  </div>
+
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon">📊</div>
+        <div class="card-title">전문 큐레이션 서비스</div>
+        <span class="card-badge">NEW</span>
+      </div>
+      <div class="card-body">
+        개인별 스윙 데이터를 기반으로 최적의 라켓을 추천하는 큐레이션 서비스를 도입합니다.
+        단순 판매를 넘어 '나에게 맞는 장비'를 제안하는 전문가 경험을 제공합니다.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon">📱</div>
+        <div class="card-title">퍼스널 스트링 앱</div>
+      </div>
+      <div class="card-body">
+        텐션 및 스트링 종류의 히스토리를 관리하고, 개인에게 최적화된 세팅을 제안하는 전용 앱을 운영합니다.
+        고객과의 지속적인 데이터 관계를 통해 충성도와 재방문율을 높입니다.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon">🩺</div>
+        <div class="card-title">장비 주치의 포지셔닝</div>
+      </div>
+      <div class="card-body">
+        온라인 최저가 공세에 맞서, 오프라인 만이 줄 수 있는 '장비 주치의' 이미지를 구축합니다.
+        전문 지식과 대면 신뢰를 경쟁력으로 삼아 가격이 아닌 가치로 승부합니다.
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- SECTION 3: 연계 전략 -->
+  <div class="section-header">
+    <div class="section-number">03</div>
+    <div class="section-meta">
+      <div class="section-tag">Joint Strategy</div>
+      <div class="section-title">공동 연계 및 마케팅 전략</div>
+      <div class="section-subtitle">두 브랜드의 시너지를 극대화하는 교차 혜택 설계</div>
+    </div>
+  </div>
+
+  <!-- CROSS BENEFITS -->
+  <div style="margin-bottom: 24px;">
+    <div style="font-size: 10px; font-weight: 700; letter-spacing: 4px; color: var(--muted); margin-bottom: 16px;">교차 혜택 프로그램</div>
+    <div class="strategy-grid">
+      <div class="strategy-card">
+        <div class="arrow">→</div>
+        <div class="from">프로스포츠에서 라켓 구입 시</div>
+        <div class="to">잼테니스 무인 이용권 3회 제공<br><span style="font-size:11px; color:rgba(255,255,255,0.35);">실제 사용 후 구매 결정을 유도하는 체험 마케팅</span></div>
+      </div>
+      <div class="strategy-card">
+        <div class="arrow">→</div>
+        <div class="from">잼테니스 레슨 등록 시</div>
+        <div class="to">프로스포츠 스트링 1회 무료 또는<br>용품 할인권 제공</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MASTERCLASS -->
+  <div class="masterclass-block" style="margin-bottom: 24px;">
+    <div class="mc-number">MC</div>
+    <div class="mc-content">
+      <div class="tag">KNOWLEDGE MARKETING · 월 1회</div>
+      <h3>라켓·스트링 마스터 클래스</h3>
+      <p>
+        프로스포츠 대표가 매달 한 차례 잼테니스 시설에서 장비 전문 클래스를 개최합니다.
+        고객에게는 실질적인 지식을, 두 브랜드에는 함께하는 전문가 이미지를 동시에 구축하는
+        지식 마케팅 전략입니다.
+      </p>
+    </div>
+  </div>
+
+  <!-- COMMUNITY -->
+  <div class="community-block">
+    <div class="community-icon-wrap">🏆</div>
+    <div>
+      <div class="community-tag">LOCAL COMMUNITY · 공동 개최</div>
+      <div class="community-title">목동 테린이 챌린지</div>
+      <div class="community-desc">
+        두 브랜드가 공동으로 '목동 테린이 챌린지'를 기획·운영합니다.
+        지역 초보 테니스 인구를 타깃으로 한 이 이벤트는 브랜드 인지도를 지역 내에 확산시키고,
+        실질적인 신규 고객 유입 채널로 기능합니다. 커뮤니티 중심 마케팅으로 장기적인 팬층을 형성합니다.
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brands">
+    <span class="footer-brand">잼테니스</span>
+    <span style="color: rgba(255,255,255,0.2); font-size: 18px;">×</span>
+    <span class="footer-brand">프로스포츠</span>
+  </div>
+  <div class="footer-copy">목동 테니스 생태계 통합 전략 제안서 · 2025</div>
+</footer>
+
+</body>
+</html>
